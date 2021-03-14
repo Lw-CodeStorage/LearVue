@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+</head>
+
+<body>
+    <p>vue 元件化</p>
+    <div id="app">
+        <my></my>
+    </div>
+</body>
+<script>
+    Vue.config.devtools = true;
+    //vue 元件
+    Vue.component('my', {
+        template:
+         `<button v-on:click="counter+=1">{{counter}}</button>`,
+        //component使用data與傳統vue使用data不同，改為function
+        data: function () {
+            return {
+                counter: 0
+            }
+        },
+      
+    })
+    //傳統vue應用程式
+    let v = new Vue({
+        el: "#app",
+        data: {
+
+        }
+
+    })
+
+</script>
+
+</html>
