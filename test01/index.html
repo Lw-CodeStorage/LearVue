@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+</head>
+
+<body>
+    <p>vue test</p>
+    <div id="app">
+
+        <div>{{text}}</div>
+        <input type="text" v-model="text">
+        <div>---</div>
+
+        <pre>{{textarea}}</pre>
+        <textarea v-model="textarea"></textarea>
+        <div>---</div>
+
+        <!-- check若沒有值，只有true/false -->
+        <input type="checkbox" v-model="checkbox1">
+        <div>---</div>
+
+        <!-- check有值，需用陣列接值 -->
+        <div><span v-for="item in checkboxArray">{{item}}</span></div>
+        <input type="checkbox" v-model="checkboxArray" value="牛">牛
+        <input type="checkbox" v-model="checkboxArray" value="豬">豬
+        <input type="checkbox" v-model="checkboxArray" value="雞">雞
+        <div>---</div>
+
+        <div><span >{{singleRadio}}</span></div>
+        <input type="radio" v-model="singleRadio" value="牛">牛
+        <input type="radio" v-model="singleRadio" value="豬">豬
+        <input type="radio" v-model="singleRadio" value="雞">雞
+        <div>---</div>
+
+        <select v-model="selected">
+            <option value="" disabled>請選擇</option>
+            <option value="雞" >雞</option>
+            <option value="豬" >豬</option>
+            <option value="牛" >牛</option>
+        </select>
+        <div>---</div>
+    </div>
+</body>
+<script>
+    Vue.config.devtools = true;
+    let v = new Vue({
+        el: "#app",
+        data: {
+            text: '',
+            textarea: '',
+            checkbox1: false,
+            checkboxArray: [],
+            singleRadio: '',
+            selected: '',
+        }
+
+    })
+
+</script>
+
+</html>
